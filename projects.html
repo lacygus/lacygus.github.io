@@ -1,0 +1,168 @@
+---
+layout: landing
+title: "Projects, Sungjin Choi"
+description: "Browse Sungjin Choi's data science and machine learning projects by technology. Filter by keyword or search."
+permalink: /projects/
+---
+
+{% include site-nav.html %}
+
+<!-- ===================== HEADER ===================== -->
+<header class="proj-hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">Portfolio</p>
+    <h1 class="serif">All Projects</h1>
+    <p class="lead">Filter by the tools and methods I used, click a keyword, or
+      search, to see every project that uses it.</p>
+  </div>
+</header>
+
+<!-- ===================== FILTER + GRID ===================== -->
+<section class="projects-section">
+  <div class="wrap">
+
+    <div class="filter-bar">
+      <input id="proj-search" class="proj-search" type="search"
+             placeholder="Search projects or keywords…" aria-label="Search projects">
+      <div id="tag-filter" class="tag-filter">
+        <button class="fchip active" data-tag="*">All</button>
+        <button class="fchip" data-tag="python">Python</button>
+        <button class="fchip" data-tag="r">R</button>
+        <button class="fchip" data-tag="machine learning">Machine Learning</button>
+        <button class="fchip" data-tag="deep learning">Deep Learning</button>
+        <button class="fchip" data-tag="nlp">NLP</button>
+        <button class="fchip" data-tag="llms">LLMs</button>
+        <button class="fchip" data-tag="multi-agent">Multi-Agent</button>
+        <button class="fchip" data-tag="computer vision">Computer Vision</button>
+        <button class="fchip" data-tag="clip">CLIP</button>
+        <button class="fchip" data-tag="pytorch">PyTorch</button>
+        <button class="fchip" data-tag="scikit-learn">scikit-learn</button>
+        <button class="fchip" data-tag="statistics">Statistics</button>
+        <button class="fchip" data-tag="data analysis">Data Analysis</button>
+        <button class="fchip" data-tag="fastapi">FastAPI</button>
+        <button class="fchip" data-tag="streamlit">Streamlit</button>
+        <button class="fchip" data-tag="docker">Docker</button>
+        <button class="fchip" data-tag="cloud">Cloud</button>
+        <button class="fchip" data-tag="gis">GIS</button>
+      </div>
+      <p id="proj-count" class="proj-count" aria-live="polite"></p>
+    </div>
+
+    <div class="cards" id="proj-grid">
+
+      <!-- 1 -->
+      <article class="card proj" data-tags="python,machine learning,scikit-learn,fastapi,streamlit,docker,cloud"
+               data-text="soccer player market value scout prediction transfermarkt random forest cloud run api">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #1d6b4f, #0a1525 70%)"></div><span class="tag-ico">&#9917;</span></div>
+        <div class="body">
+          <h3 class="serif">Soccer Player Market Value Scout</h3>
+          <p>Deployed ML service predicting and explaining soccer players' market value. Streamlit app + FastAPI on Google Cloud Run.</p>
+          <div class="tags"><span>Python</span><span>Machine Learning</span><span>scikit-learn</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span><span>Cloud</span></div>
+          <div class="links"><a href="https://418final-uxdflcbiixufvv9rpxytej.streamlit.app/" target="_blank" rel="noopener">Live app</a><a href="https://github.com/lacygus/418_final" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card proj" data-tags="python,llms,nlp,multi-agent,statistics,data analysis"
+               data-text="llm multi-agent research teams thesis emnlp simulation fidelity bootstrap inference judge ensemble">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #2a3f8f, #0a1525 70%)"></div><span class="tag-ico">&#129302;</span></div>
+        <div class="body">
+          <h3 class="serif">LLM Multi-Agent Research Teams</h3>
+          <p>M.S. thesis: LLM multi-agent simulations of 5 real research teams with a 4-layer fidelity framework and 55-metric NLP suite. <em>Under review, EMNLP 2026.</em></p>
+          <div class="tags"><span>Python</span><span>LLMs</span><span>NLP</span><span>Multi-Agent</span><span>Statistics</span><span>Data Analysis</span></div>
+          <div class="links"><a href="{{ '/publications/' | relative_url }}">Publication</a><a href="{{ '/portfolio/' | relative_url }}">Details</a></div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card proj" data-tags="python,deep learning,llms,pytorch"
+               data-text="multimodal llm merging samsung safetensors layer-wise model merge evaluation lmm">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #7a3f8f, #0a1525 70%)"></div><span class="tag-ico">&#129518;</span></div>
+        <div class="body">
+          <h3 class="serif">Multimodal LLM Merging</h3>
+          <p>Samsung AI research: layer-wise merge strategies and a scalable safetensors pipeline that lift language-benchmark scores while preserving multimodal performance.</p>
+          <div class="tags"><span>Python</span><span>Deep Learning</span><span>LLMs</span><span>PyTorch</span></div>
+          <div class="links"><a href="{{ '/portfolio/' | relative_url }}">Details</a></div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card proj" data-tags="python,deep learning,computer vision,pytorch,clip"
+               data-text="emotion recognition clip-dissect interpretability resnet bias concept emotionroi">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #8f5a2a, #0a1525 70%)"></div><span class="tag-ico">&#128247;</span></div>
+        <div class="body">
+          <h3 class="serif">Enhancing Emotion Recognition in AI</h3>
+          <p>Improving interpretability and reducing bias of an image emotion classifier using CLIP-Dissect and concept models on a ResNet-50 backbone.</p>
+          <div class="tags"><span>Python</span><span>Deep Learning</span><span>Computer Vision</span><span>PyTorch</span><span>CLIP</span></div>
+          <div class="links"><a href="https://lacygus.github.io/Emotion_Recognition" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/lacygus/Emotion_Recognition" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card proj" data-tags="python,deep learning,computer vision,pytorch,clip,scikit-learn"
+               data-text="clip image retrieval qwen2-vl knn nearest neighbors cifar-10 vision language">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #2a6f8f, #0a1525 70%)"></div><span class="tag-ico">&#128269;</span></div>
+        <div class="body">
+          <h3 class="serif">CLIP Image Retrieval &amp; VLM Classification</h3>
+          <p>CLIP embeddings with k-NN retrieval and Qwen2-VL classification on CIFAR-10, with retrieval-quality checks against a random baseline.</p>
+          <div class="tags"><span>Python</span><span>Deep Learning</span><span>Computer Vision</span><span>PyTorch</span><span>CLIP</span><span>scikit-learn</span></div>
+          <div class="links"><a href="https://github.com/lacygus/clip-image-retrieval" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card proj" data-tags="python,data analysis,statistics"
+               data-text="congressional stock trading house representatives party congress-legislators pandas permutation test">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #3f6f3a, #0a1525 70%)"></div><span class="tag-ico">&#128202;</span></div>
+        <div class="body">
+          <h3 class="serif">Congressional Stock-Trading Analysis</h3>
+          <p>Analysis of U.S. House members' reported stock trades by party. Re-engineered from a fragile HTML scrape to a stable congress-legislators join.</p>
+          <div class="tags"><span>Python</span><span>Data Analysis</span><span>Statistics</span></div>
+          <div class="links"><a href="https://github.com/lacygus/Stocks-Trades" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card proj" data-tags="python,machine learning,scikit-learn,data analysis"
+               data-text="used car price prediction regression feature engineering eda rmse">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #8f7a2a, #0a1525 70%)"></div><span class="tag-ico">&#128663;</span></div>
+        <div class="body">
+          <h3 class="serif">Used Car Price Prediction</h3>
+          <p>Predicting used-car prices from vehicle attributes with feature engineering, EDA, and regression model selection.</p>
+          <div class="tags"><span>Python</span><span>Machine Learning</span><span>scikit-learn</span><span>Data Analysis</span></div>
+          <div class="links"><a href="https://github.com/lacygus/car-price-prediction" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card proj" data-tags="r,machine learning,statistics"
+               data-text="email spam classification svm random forest lda qda logistic regression preprocessing">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #8f2a3f, #0a1525 70%)"></div><span class="tag-ico">&#9993;</span></div>
+        <div class="body">
+          <h3 class="serif">Email Spam Classification</h3>
+          <p>Comparing preprocessing techniques and classifiers (logistic regression, LDA/QDA, SVM, random forest) on 4,601 emails. Built in R.</p>
+          <div class="tags"><span>R</span><span>Machine Learning</span><span>Statistics</span></div>
+          <div class="links"><a href="https://github.com/lacygus/spam-mail-classification" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card proj" data-tags="python,gis,data analysis"
+               data-text="optimizing hospital location san diego geopandas spatial crash census hotspot">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #2a8f7a, #0a1525 70%)"></div><span class="tag-ico">&#127973;</span></div>
+        <div class="body">
+          <h3 class="serif">Optimizing Hospital Locations in San Diego</h3>
+          <p>Geospatial analysis using traffic-crash and census data to recommend hospital locations for high-risk areas, compared against actual locations.</p>
+          <div class="tags"><span>Python</span><span>GIS</span><span>Data Analysis</span></div>
+          <div class="links"><a href="https://github.com/lacygus/Optimizing-Hospital-Location-in-San-Diego" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <p id="proj-empty" class="proj-empty" hidden>No projects match that filter. <button class="link-reset" id="reset-filter">Reset</button></p>
+  </div>
+</section>
+
+{% include site-footer.html %}

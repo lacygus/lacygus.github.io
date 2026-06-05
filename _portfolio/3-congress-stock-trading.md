@@ -14,6 +14,6 @@ party affiliation to study differences in trading behavior across parties.
 `house.gov`, which broke every new Congress when the page layout changed. The project was
 re-engineered to join against the community-maintained
 [`unitedstates/congress-legislators`](https://github.com/unitedstates/congress-legislators)
-dataset — a stable, versioned source that removes the fragile HTML scraping entirely.
+dataset, a stable, versioned source that removes the fragile HTML scraping entirely.
 
 *Python · pandas · requests · data wrangling*

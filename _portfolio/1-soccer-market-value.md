@@ -17,7 +17,7 @@ and under-valued players, compare leagues and positions, and inspect model accur
 league-by-league.
 
 **Stack.** `RandomForestRegressor` on `log(market_value)` (test R² = 0.59), a FastAPI
-service containerized and deployed to Google Cloud Run, and a Streamlit front end — with
+service containerized and deployed to Google Cloud Run, and a Streamlit front end, with
 the data scraped and cleaned from Transfermarkt and Sofifa.
 
 *Python · scikit-learn · FastAPI · Streamlit · Docker · Google Cloud Run*

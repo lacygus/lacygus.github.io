@@ -84,3 +84,66 @@
   resize();
   step();
 })();
+
+/* ---- projects page: tag filter + search ---- */
+(function () {
+  "use strict";
+  var grid = document.getElementById("proj-grid");
+  if (!grid) return;
+
+  var cards = Array.prototype.slice.call(grid.querySelectorAll(".proj"));
+  var chips = Array.prototype.slice.call(document.querySelectorAll(".fchip"));
+  var search = document.getElementById("proj-search");
+  var countEl = document.getElementById("proj-count");
+  var emptyEl = document.getElementById("proj-empty");
+  var resetBtn = document.getElementById("reset-filter");
+  var active = new Set();           // active tag filters (empty = all)
+
+  function readHash() {
+    var h = decodeURIComponent((location.hash || "").replace(/^#/, "")).toLowerCase();
+    if (h) { active.clear(); active.add(h); }
+  }
+
+  function apply() {
+    var q = (search.value || "").trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (card) {
+      var tags = (card.getAttribute("data-tags") || "").split(",");
+      var text = (card.getAttribute("data-text") || "") + " " + card.textContent.toLowerCase();
+      var tagOk = active.size === 0 || tags.some(function (t) { return active.has(t); });
+      var searchOk = !q || text.toLowerCase().indexOf(q) !== -1 ||
+                     tags.some(function (t) { return t.indexOf(q) !== -1; });
+      var show = tagOk && searchOk;
+      card.classList.toggle("hide", !show);
+      if (show) shown++;
+    });
+    chips.forEach(function (c) {
+      var tag = c.getAttribute("data-tag");
+      if (tag === "*") c.classList.toggle("active", active.size === 0);
+      else c.classList.toggle("active", active.has(tag));
+    });
+    countEl.textContent = shown + (shown === 1 ? " project" : " projects") +
+      (active.size || q ? " shown" : " total");
+    emptyEl.hidden = shown !== 0;
+  }
+
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var tag = chip.getAttribute("data-tag");
+      if (tag === "*") { active.clear(); }
+      else if (active.has(tag)) { active.delete(tag); }
+      else { active.add(tag); }
+      history.replaceState(null, "", active.size === 1 ?
+        "#" + Array.from(active)[0] : location.pathname);
+      apply();
+    });
+  });
+
+  search.addEventListener("input", apply);
+  if (resetBtn) resetBtn.addEventListener("click", function () {
+    active.clear(); search.value = ""; history.replaceState(null, "", location.pathname); apply();
+  });
+
+  readHash();
+  apply();
+})();

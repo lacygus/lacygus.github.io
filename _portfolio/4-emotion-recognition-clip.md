@@ -11,7 +11,7 @@ more interpretable and less biased.
 - **Code:** [github.com/lacygus/Emotion_Recognition](https://github.com/lacygus/Emotion_Recognition)
 
 **What it does.** Upgrades an EmotionROI classifier with ResNet-50 and concept models,
-and uses **CLIP-Dissect** to interpret what individual neurons respond to — surfacing and
+and uses **CLIP-Dissect** to interpret what individual neurons respond to, surfacing and
 reducing biases in the learned representations while improving emotion-detection accuracy.
 
 *Python · PyTorch · ResNet-50 · CLIP · model interpretability*

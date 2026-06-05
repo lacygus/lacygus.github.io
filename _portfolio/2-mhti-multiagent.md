@@ -5,8 +5,8 @@ collection: portfolio
 ---
 
 The research engine behind my M.S. thesis and EMNLP 2026 submission: a Python pipeline
-that studies how the **structural design of team discussions** — who can see what, how
-much each agent remembers, team size, mentor count, and session length — shapes both
+that studies how the **structural design of team discussions**, who can see what, how
+much each agent remembers, team size, mentor count, and session length, shapes both
 collaboration behavior and final proposal quality.
 
 **Design.** Two parallel tracks share one metric and inference layer: a *human track* that

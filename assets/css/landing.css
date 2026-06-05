@@ -199,6 +199,41 @@ footer .social a:hover { border-color: var(--gold); color: var(--gold); }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
+/* ---------- projects page ---------- */
+.proj-hero { position: relative; background: var(--navy); color: #eef1f6;
+  padding: 150px 0 70px; overflow: hidden; }
+.proj-hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: .8; }
+.proj-hero::after { content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(105deg, var(--navy) 30%, rgba(10,21,37,.5) 70%, rgba(10,21,37,.1) 100%); }
+.proj-hero .wrap { position: relative; z-index: 2; }
+.proj-hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  margin: 14px 0 14px; }
+.proj-hero p.lead { color: #b9c1cd; max-width: 52ch; margin: 0; }
+
+.projects-section { padding: 56px 0 96px; }
+.filter-bar { margin-bottom: 38px; }
+.proj-search {
+  width: 100%; max-width: 460px; padding: 13px 18px; font-size: .95rem; font-family: var(--sans);
+  border: 1px solid var(--line-d); border-radius: 10px; background: #fff; color: var(--ink);
+  margin-bottom: 20px; transition: border-color .2s, box-shadow .2s;
+}
+.proj-search:focus { outline: none; border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(199,154,91,.15); }
+.tag-filter { display: flex; flex-wrap: wrap; gap: 10px; }
+.fchip {
+  font-family: var(--sans); font-size: .82rem; font-weight: 500; cursor: pointer;
+  padding: 8px 15px; border-radius: 999px; border: 1px solid var(--line-d);
+  background: #fff; color: #51596a; transition: all .18s;
+}
+.fchip:hover { border-color: var(--gold); color: var(--ink); }
+.fchip.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.fchip.active[data-tag="*"] { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.proj-count { margin: 22px 0 0; font-size: .82rem; color: var(--muted-d); letter-spacing: .03em; }
+.card.hide { display: none; }
+.proj-empty { text-align: center; padding: 50px 0; color: var(--muted-d); font-size: 1rem; }
+.link-reset { background: none; border: 0; color: var(--gold); font-weight: 600;
+  cursor: pointer; text-decoration: underline; font-size: 1rem; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
   .cards { grid-template-columns: 1fr 1fr; }
