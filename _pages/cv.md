@@ -67,4 +67,5 @@ Contact
 ======
 * Email: [sungjinchoi5790@gmail.com](mailto:sungjinchoi5790@gmail.com)
 * GitHub: [github.com/lacygus](https://github.com/lacygus)
+* LinkedIn: [sungjin-choi](https://www.linkedin.com/in/sungjin-choi-b00179258/)
 * Location: Los Angeles, CA
