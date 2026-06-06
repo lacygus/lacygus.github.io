@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+<p><a href="{{ '/files/Sungjin_Choi_CV.pdf' | relative_url }}" class="btn btn--primary" target="_blank" rel="noopener">Download CV (PDF)</a></p>
+
 Education
 ======
 * **M.S. in Applied Statistics & Data Science**, University of California, Los Angeles (UCLA), Sep 2024 – present
