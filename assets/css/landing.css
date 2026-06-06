@@ -219,7 +219,11 @@ footer .social a:hover { border-color: var(--gold); color: var(--gold); }
 }
 .proj-search:focus { outline: none; border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(199,154,91,.15); }
-.tag-filter { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag-filter { display: flex; flex-direction: column; gap: 18px; }
+.tag-filter > .fchip { align-self: flex-start; }
+.fgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.fgroup-label { width: 100%; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted-d); font-weight: 600; margin-bottom: 1px; }
 .fchip {
   font-family: var(--sans); font-size: .82rem; font-weight: 500; cursor: pointer;
   padding: 8px 15px; border-radius: 999px; border: 1px solid var(--line-d);

@@ -1,161 +1,250 @@
 ---
 layout: landing
 title: "Projects, Sungjin Choi"
-description: "Browse Sungjin Choi's data science and machine learning projects by technology. Filter by keyword or search."
+description: "Browse Sungjin Choi's data science and machine learning projects and coursework by keyword. Click a tag or search to see every project that uses it."
 permalink: /projects/
 ---
 
 {% include site-nav.html %}
 
-<!-- ===================== HEADER ===================== -->
 <header class="proj-hero">
   <canvas id="hero-canvas"></canvas>
   <div class="wrap">
     <p class="eyebrow">Portfolio</p>
     <h1 class="serif">All Projects</h1>
-    <p class="lead">Filter by the tools and methods I used, click a keyword, or
-      search, to see every project that uses it.</p>
+    <p class="lead">Every project and course project, tagged by the tools, methods, and
+      domains I worked with. Click any keyword, or search, to see all the work that uses it.</p>
   </div>
 </header>
 
-<!-- ===================== FILTER + GRID ===================== -->
 <section class="projects-section">
   <div class="wrap">
 
     <div class="filter-bar">
       <input id="proj-search" class="proj-search" type="search"
-             placeholder="Search projects or keywords…" aria-label="Search projects">
+             placeholder="Search projects or keywords..." aria-label="Search projects">
       <div id="tag-filter" class="tag-filter">
-        <button class="fchip active" data-tag="*">All</button>
+      <button class="fchip active" data-tag="*">All</button>
+      <div class="fgroup"><span class="fgroup-label">Languages &amp; Tools</span>
         <button class="fchip" data-tag="python">Python</button>
         <button class="fchip" data-tag="r">R</button>
-        <button class="fchip" data-tag="machine learning">Machine Learning</button>
-        <button class="fchip" data-tag="deep learning">Deep Learning</button>
-        <button class="fchip" data-tag="nlp">NLP</button>
-        <button class="fchip" data-tag="llms">LLMs</button>
-        <button class="fchip" data-tag="multi-agent">Multi-Agent</button>
-        <button class="fchip" data-tag="computer vision">Computer Vision</button>
-        <button class="fchip" data-tag="clip">CLIP</button>
+        <button class="fchip" data-tag="sql">SQL</button>
+        <button class="fchip" data-tag="tableau">Tableau</button>
         <button class="fchip" data-tag="pytorch">PyTorch</button>
         <button class="fchip" data-tag="scikit-learn">scikit-learn</button>
-        <button class="fchip" data-tag="statistics">Statistics</button>
-        <button class="fchip" data-tag="data analysis">Data Analysis</button>
+        <button class="fchip" data-tag="pandas">pandas</button>
         <button class="fchip" data-tag="fastapi">FastAPI</button>
         <button class="fchip" data-tag="streamlit">Streamlit</button>
         <button class="fchip" data-tag="docker">Docker</button>
-        <button class="fchip" data-tag="cloud">Cloud</button>
+        <button class="fchip" data-tag="google cloud">Google Cloud</button>
+        <button class="fchip" data-tag="rest api">REST API</button>
+      </div>
+      <div class="fgroup"><span class="fgroup-label">Machine Learning &amp; AI</span>
+        <button class="fchip" data-tag="machine learning">Machine Learning</button>
+        <button class="fchip" data-tag="deep learning">Deep Learning</button>
+        <button class="fchip" data-tag="neural networks">Neural Networks</button>
+        <button class="fchip" data-tag="nlp">NLP</button>
+        <button class="fchip" data-tag="llms">LLMs</button>
+        <button class="fchip" data-tag="multi-agent systems">Multi-Agent Systems</button>
+        <button class="fchip" data-tag="computer vision">Computer Vision</button>
+        <button class="fchip" data-tag="clip">CLIP</button>
+        <button class="fchip" data-tag="transformers">Transformers</button>
+        <button class="fchip" data-tag="transfer learning">Transfer Learning</button>
+        <button class="fchip" data-tag="model deployment">Model Deployment</button>
+        <button class="fchip" data-tag="model interpretability">Model Interpretability</button>
+        <button class="fchip" data-tag="model evaluation">Model Evaluation</button>
+        <button class="fchip" data-tag="predictive modeling">Predictive Modeling</button>
+        <button class="fchip" data-tag="information retrieval">Information Retrieval</button>
+        <button class="fchip" data-tag="gradient boosting">Gradient Boosting</button>
+        <button class="fchip" data-tag="xgboost">XGBoost</button>
+      </div>
+      <div class="fgroup"><span class="fgroup-label">Statistics &amp; Methods</span>
+        <button class="fchip" data-tag="statistical inference">Statistical Inference</button>
+        <button class="fchip" data-tag="statistical modeling">Statistical Modeling</button>
+        <button class="fchip" data-tag="hypothesis testing">Hypothesis Testing</button>
+        <button class="fchip" data-tag="permutation testing">Permutation Testing</button>
+        <button class="fchip" data-tag="bootstrap">Bootstrap</button>
+        <button class="fchip" data-tag="regression">Regression</button>
+        <button class="fchip" data-tag="classification">Classification</button>
+        <button class="fchip" data-tag="logistic regression">Logistic Regression</button>
+        <button class="fchip" data-tag="svm">SVM</button>
+        <button class="fchip" data-tag="random forest">Random Forest</button>
+        <button class="fchip" data-tag="feature engineering">Feature Engineering</button>
+        <button class="fchip" data-tag="hyperparameter tuning">Hyperparameter Tuning</button>
+        <button class="fchip" data-tag="experimental design">Experimental Design</button>
+        <button class="fchip" data-tag="fairness">Fairness</button>
+        <button class="fchip" data-tag="optimization">Optimization</button>
+      </div>
+      <div class="fgroup"><span class="fgroup-label">Data &amp; Engineering</span>
+        <button class="fchip" data-tag="data analysis">Data Analysis</button>
+        <button class="fchip" data-tag="eda">EDA</button>
+        <button class="fchip" data-tag="data cleaning">Data Cleaning</button>
+        <button class="fchip" data-tag="missing data">Missing Data</button>
+        <button class="fchip" data-tag="data visualization">Data Visualization</button>
+        <button class="fchip" data-tag="data pipeline">Data Pipeline</button>
+        <button class="fchip" data-tag="data collection">Data Collection</button>
+        <button class="fchip" data-tag="web scraping">Web Scraping</button>
         <button class="fchip" data-tag="gis">GIS</button>
+        <button class="fchip" data-tag="geospatial analysis">Geospatial Analysis</button>
+        <button class="fchip" data-tag="census data">Census Data</button>
+        <button class="fchip" data-tag="dashboards">Dashboards</button>
+        <button class="fchip" data-tag="research">Research</button>
+        <button class="fchip" data-tag="reproducibility">Reproducibility</button>
+      </div>
+      <div class="fgroup"><span class="fgroup-label">Domain &amp; Business</span>
+        <button class="fchip" data-tag="sports analytics">Sports Analytics</button>
+        <button class="fchip" data-tag="finance">Finance</button>
+        <button class="fchip" data-tag="healthcare">Healthcare</button>
+        <button class="fchip" data-tag="economics">Economics</button>
+        <button class="fchip" data-tag="market research">Market Research</button>
+        <button class="fchip" data-tag="competitor analysis">Competitor Analysis</button>
+        <button class="fchip" data-tag="business analytics">Business Analytics</button>
+        <button class="fchip" data-tag="customer success">Customer Success</button>
+        <button class="fchip" data-tag="stakeholder communication">Stakeholder Communication</button>
+      </div>
       </div>
       <p id="proj-count" class="proj-count" aria-live="polite"></p>
     </div>
 
     <div class="cards" id="proj-grid">
 
-      <!-- 1 -->
-      <article class="card proj" data-tags="python,machine learning,scikit-learn,fastapi,streamlit,docker,cloud"
-               data-text="soccer player market value scout prediction transfermarkt random forest cloud run api">
+      <article class="card proj" data-tags="python,machine learning,scikit-learn,random forest,regression,feature engineering,model deployment,fastapi,rest api,streamlit,docker,google cloud,web scraping,data visualization,predictive modeling,sports analytics" data-text="soccer player market value scout deployed ml service that predicts and explains soccer players&#x27; market value. streamlit app with a fastapi prediction service on google cloud run. python machine learning scikit-learn random forest regression feature engineering model deployment fastapi rest api streamlit docker google cloud web scraping data visualization predictive modeling sports analytics">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #1d6b4f, #0a1525 70%)"></div><span class="tag-ico">&#9917;</span></div>
         <div class="body">
           <h3 class="serif">Soccer Player Market Value Scout</h3>
-          <p>Deployed ML service predicting and explaining soccer players' market value. Streamlit app + FastAPI on Google Cloud Run.</p>
-          <div class="tags"><span>Python</span><span>Machine Learning</span><span>scikit-learn</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span><span>Cloud</span></div>
+          <p>Deployed ML service that predicts and explains soccer players&#x27; market value. Streamlit app with a FastAPI prediction service on Google Cloud Run.</p>
+          <div class="tags"><span>Python</span><span>Machine Learning</span><span>scikit-learn</span><span>Random Forest</span><span>Regression</span><span>Feature Engineering</span><span>Model Deployment</span><span>FastAPI</span><span>REST API</span><span>Streamlit</span><span>Docker</span><span>Google Cloud</span><span>Web Scraping</span><span>Data Visualization</span><span>Predictive Modeling</span><span>Sports Analytics</span></div>
           <div class="links"><a href="https://418final-uxdflcbiixufvv9rpxytej.streamlit.app/" target="_blank" rel="noopener">Live app</a><a href="https://github.com/lacygus/418_final" target="_blank" rel="noopener">Code</a></div>
         </div>
       </article>
 
-      <!-- 2 -->
-      <article class="card proj" data-tags="python,llms,nlp,multi-agent,statistics,data analysis"
-               data-text="llm multi-agent research teams thesis emnlp simulation fidelity bootstrap inference judge ensemble">
+      <article class="card proj" data-tags="python,nlp,llms,multi-agent systems,deep learning,statistical inference,hypothesis testing,bootstrap,experimental design,model evaluation,data pipeline,research,reproducibility" data-text="llm multi-agent research teams m.s. thesis: llm multi-agent simulations of five real research teams (~24k utterances) with a four-layer fidelity framework and a 55-metric nlp evaluation suite. under review at emnlp 2026. python nlp llms multi-agent systems deep learning statistical inference hypothesis testing bootstrap experimental design model evaluation data pipeline research reproducibility">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #2a3f8f, #0a1525 70%)"></div><span class="tag-ico">&#129302;</span></div>
         <div class="body">
           <h3 class="serif">LLM Multi-Agent Research Teams</h3>
-          <p>M.S. thesis: LLM multi-agent simulations of 5 real research teams with a 4-layer fidelity framework and 55-metric NLP suite. <em>Under review, EMNLP 2026.</em></p>
-          <div class="tags"><span>Python</span><span>LLMs</span><span>NLP</span><span>Multi-Agent</span><span>Statistics</span><span>Data Analysis</span></div>
+          <p>M.S. thesis: LLM multi-agent simulations of five real research teams (~24K utterances) with a four-layer fidelity framework and a 55-metric NLP evaluation suite. Under review at EMNLP 2026.</p>
+          <div class="tags"><span>Python</span><span>NLP</span><span>LLMs</span><span>Multi-Agent Systems</span><span>Deep Learning</span><span>Statistical Inference</span><span>Hypothesis Testing</span><span>Bootstrap</span><span>Experimental Design</span><span>Model Evaluation</span><span>Data Pipeline</span><span>Research</span><span>Reproducibility</span></div>
           <div class="links"><a href="{{ '/publications/' | relative_url }}">Publication</a><a href="{{ '/portfolio/' | relative_url }}">Details</a></div>
         </div>
       </article>
 
-      <!-- 3 -->
-      <article class="card proj" data-tags="python,deep learning,llms,pytorch"
-               data-text="multimodal llm merging samsung safetensors layer-wise model merge evaluation lmm">
+      <article class="card proj" data-tags="python,pytorch,deep learning,llms,computer vision,neural networks,model evaluation,research" data-text="multimodal llm merging samsung electronics ai research: layer-wise merge strategies and a scalable safetensors pipeline that lift language-benchmark scores while preserving multimodal performance. python pytorch deep learning llms computer vision neural networks model evaluation research">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #7a3f8f, #0a1525 70%)"></div><span class="tag-ico">&#129518;</span></div>
         <div class="body">
           <h3 class="serif">Multimodal LLM Merging</h3>
-          <p>Samsung AI research: layer-wise merge strategies and a scalable safetensors pipeline that lift language-benchmark scores while preserving multimodal performance.</p>
-          <div class="tags"><span>Python</span><span>Deep Learning</span><span>LLMs</span><span>PyTorch</span></div>
+          <p>Samsung Electronics AI research: layer-wise merge strategies and a scalable safetensors pipeline that lift language-benchmark scores while preserving multimodal performance.</p>
+          <div class="tags"><span>Python</span><span>PyTorch</span><span>Deep Learning</span><span>LLMs</span><span>Computer Vision</span><span>Neural Networks</span><span>Model Evaluation</span><span>Research</span></div>
           <div class="links"><a href="{{ '/portfolio/' | relative_url }}">Details</a></div>
         </div>
       </article>
 
-      <!-- 4 -->
-      <article class="card proj" data-tags="python,deep learning,computer vision,pytorch,clip"
-               data-text="emotion recognition clip-dissect interpretability resnet bias concept emotionroi">
+      <article class="card proj" data-tags="python,pytorch,deep learning,computer vision,transformers,neural networks,model evaluation,reproducibility,research" data-text="slivit vision transformer reproduction reproduced and verified the slivit vision-transformer experiments from the paper and open-source code, analyzing model structure and performance across settings. python pytorch deep learning computer vision transformers neural networks model evaluation reproducibility research">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #3a5a8f, #0a1525 70%)"></div><span class="tag-ico">&#128300;</span></div>
+        <div class="body">
+          <h3 class="serif">SLIViT Vision Transformer Reproduction</h3>
+          <p>Reproduced and verified the SLIViT vision-transformer experiments from the paper and open-source code, analyzing model structure and performance across settings.</p>
+          <div class="tags"><span>Python</span><span>PyTorch</span><span>Deep Learning</span><span>Computer Vision</span><span>Transformers</span><span>Neural Networks</span><span>Model Evaluation</span><span>Reproducibility</span><span>Research</span></div>
+          <div class="links"></div>
+        </div>
+      </article>
+
+      <article class="card proj" data-tags="python,pytorch,deep learning,computer vision,clip,transfer learning,model interpretability,neural networks,research" data-text="enhancing emotion recognition in ai improved interpretability and reduced bias of an image emotion classifier using clip-dissect and concept models on a resnet-50 backbone. python pytorch deep learning computer vision clip transfer learning model interpretability neural networks research">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #8f5a2a, #0a1525 70%)"></div><span class="tag-ico">&#128247;</span></div>
         <div class="body">
           <h3 class="serif">Enhancing Emotion Recognition in AI</h3>
-          <p>Improving interpretability and reducing bias of an image emotion classifier using CLIP-Dissect and concept models on a ResNet-50 backbone.</p>
-          <div class="tags"><span>Python</span><span>Deep Learning</span><span>Computer Vision</span><span>PyTorch</span><span>CLIP</span></div>
+          <p>Improved interpretability and reduced bias of an image emotion classifier using CLIP-Dissect and concept models on a ResNet-50 backbone.</p>
+          <div class="tags"><span>Python</span><span>PyTorch</span><span>Deep Learning</span><span>Computer Vision</span><span>CLIP</span><span>Transfer Learning</span><span>Model Interpretability</span><span>Neural Networks</span><span>Research</span></div>
           <div class="links"><a href="https://lacygus.github.io/Emotion_Recognition" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/lacygus/Emotion_Recognition" target="_blank" rel="noopener">Code</a></div>
         </div>
       </article>
 
-      <!-- 5 -->
-      <article class="card proj" data-tags="python,deep learning,computer vision,pytorch,clip,scikit-learn"
-               data-text="clip image retrieval qwen2-vl knn nearest neighbors cifar-10 vision language">
+      <article class="card proj" data-tags="python,pytorch,deep learning,computer vision,clip,scikit-learn,machine learning,model evaluation,information retrieval" data-text="clip image retrieval &amp; vlm classification clip embeddings with k-nn retrieval and qwen2-vl classification on cifar-10, with retrieval-quality checks against a random baseline. python pytorch deep learning computer vision clip scikit-learn machine learning model evaluation information retrieval">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #2a6f8f, #0a1525 70%)"></div><span class="tag-ico">&#128269;</span></div>
         <div class="body">
           <h3 class="serif">CLIP Image Retrieval &amp; VLM Classification</h3>
           <p>CLIP embeddings with k-NN retrieval and Qwen2-VL classification on CIFAR-10, with retrieval-quality checks against a random baseline.</p>
-          <div class="tags"><span>Python</span><span>Deep Learning</span><span>Computer Vision</span><span>PyTorch</span><span>CLIP</span><span>scikit-learn</span></div>
+          <div class="tags"><span>Python</span><span>PyTorch</span><span>Deep Learning</span><span>Computer Vision</span><span>CLIP</span><span>scikit-learn</span><span>Machine Learning</span><span>Model Evaluation</span><span>Information Retrieval</span></div>
           <div class="links"><a href="https://github.com/lacygus/clip-image-retrieval" target="_blank" rel="noopener">Code</a></div>
         </div>
       </article>
 
-      <!-- 6 -->
-      <article class="card proj" data-tags="python,data analysis,statistics"
-               data-text="congressional stock trading house representatives party congress-legislators pandas permutation test">
+      <article class="card proj" data-tags="python,pandas,data analysis,eda,data cleaning,missing data,data collection,hypothesis testing,permutation testing,classification,random forest,hyperparameter tuning,fairness,web scraping,statistical modeling,finance" data-text="congressional stock-trading analysis analysis and modeling of u.s. house members&#x27; stock trades: data collection, missingness analysis, hypothesis testing, and a random forest party-prediction model (99% accuracy) with a fairness permutation test. python pandas data analysis eda data cleaning missing data data collection hypothesis testing permutation testing classification random forest hyperparameter tuning fairness web scraping statistical modeling finance">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #3f6f3a, #0a1525 70%)"></div><span class="tag-ico">&#128202;</span></div>
         <div class="body">
           <h3 class="serif">Congressional Stock-Trading Analysis</h3>
-          <p>Analysis of U.S. House members' reported stock trades by party. Re-engineered from a fragile HTML scrape to a stable congress-legislators join.</p>
-          <div class="tags"><span>Python</span><span>Data Analysis</span><span>Statistics</span></div>
+          <p>Analysis and modeling of U.S. House members&#x27; stock trades: data collection, missingness analysis, hypothesis testing, and a Random Forest party-prediction model (99% accuracy) with a fairness permutation test.</p>
+          <div class="tags"><span>Python</span><span>pandas</span><span>Data Analysis</span><span>EDA</span><span>Data Cleaning</span><span>Missing Data</span><span>Data Collection</span><span>Hypothesis Testing</span><span>Permutation Testing</span><span>Classification</span><span>Random Forest</span><span>Hyperparameter Tuning</span><span>Fairness</span><span>Web Scraping</span><span>Statistical Modeling</span><span>Finance</span></div>
           <div class="links"><a href="https://github.com/lacygus/Stocks-Trades" target="_blank" rel="noopener">Code</a></div>
         </div>
       </article>
 
-      <!-- 7 -->
-      <article class="card proj" data-tags="python,machine learning,scikit-learn,data analysis"
-               data-text="used car price prediction regression feature engineering eda rmse">
+      <article class="card proj" data-tags="python,scikit-learn,machine learning,regression,feature engineering,eda,data analysis,predictive modeling" data-text="used car price prediction predicting used-car prices from vehicle attributes with feature engineering, exploratory analysis, and regression model selection. python scikit-learn machine learning regression feature engineering eda data analysis predictive modeling">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #8f7a2a, #0a1525 70%)"></div><span class="tag-ico">&#128663;</span></div>
         <div class="body">
           <h3 class="serif">Used Car Price Prediction</h3>
-          <p>Predicting used-car prices from vehicle attributes with feature engineering, EDA, and regression model selection.</p>
-          <div class="tags"><span>Python</span><span>Machine Learning</span><span>scikit-learn</span><span>Data Analysis</span></div>
+          <p>Predicting used-car prices from vehicle attributes with feature engineering, exploratory analysis, and regression model selection.</p>
+          <div class="tags"><span>Python</span><span>scikit-learn</span><span>Machine Learning</span><span>Regression</span><span>Feature Engineering</span><span>EDA</span><span>Data Analysis</span><span>Predictive Modeling</span></div>
           <div class="links"><a href="https://github.com/lacygus/car-price-prediction" target="_blank" rel="noopener">Code</a></div>
         </div>
       </article>
 
-      <!-- 8 -->
-      <article class="card proj" data-tags="r,machine learning,statistics"
-               data-text="email spam classification svm random forest lda qda logistic regression preprocessing">
+      <article class="card proj" data-tags="r,machine learning,classification,logistic regression,svm,random forest,statistical modeling,feature engineering,data analysis" data-text="email spam classification comparing preprocessing techniques and classifiers (logistic regression, lda/qda, svm, random forest) on 4,601 emails. built in r. r machine learning classification logistic regression svm random forest statistical modeling feature engineering data analysis">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #8f2a3f, #0a1525 70%)"></div><span class="tag-ico">&#9993;</span></div>
         <div class="body">
           <h3 class="serif">Email Spam Classification</h3>
           <p>Comparing preprocessing techniques and classifiers (logistic regression, LDA/QDA, SVM, random forest) on 4,601 emails. Built in R.</p>
-          <div class="tags"><span>R</span><span>Machine Learning</span><span>Statistics</span></div>
+          <div class="tags"><span>R</span><span>Machine Learning</span><span>Classification</span><span>Logistic Regression</span><span>SVM</span><span>Random Forest</span><span>Statistical Modeling</span><span>Feature Engineering</span><span>Data Analysis</span></div>
           <div class="links"><a href="https://github.com/lacygus/spam-mail-classification" target="_blank" rel="noopener">Code</a></div>
         </div>
       </article>
 
-      <!-- 9 -->
-      <article class="card proj" data-tags="python,gis,data analysis"
-               data-text="optimizing hospital location san diego geopandas spatial crash census hotspot">
+      <article class="card proj" data-tags="python,gis,geospatial analysis,data analysis,data visualization,optimization,healthcare,pandas" data-text="optimizing hospital locations in san diego geospatial analysis using traffic-crash and census data to recommend hospital locations for high-risk areas, compared against actual locations. python gis geospatial analysis data analysis data visualization optimization healthcare pandas">
         <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #2a8f7a, #0a1525 70%)"></div><span class="tag-ico">&#127973;</span></div>
         <div class="body">
           <h3 class="serif">Optimizing Hospital Locations in San Diego</h3>
           <p>Geospatial analysis using traffic-crash and census data to recommend hospital locations for high-risk areas, compared against actual locations.</p>
-          <div class="tags"><span>Python</span><span>GIS</span><span>Data Analysis</span></div>
+          <div class="tags"><span>Python</span><span>GIS</span><span>Geospatial Analysis</span><span>Data Analysis</span><span>Data Visualization</span><span>Optimization</span><span>Healthcare</span><span>pandas</span></div>
           <div class="links"><a href="https://github.com/lacygus/Optimizing-Hospital-Location-in-San-Diego" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+
+      <article class="card proj" data-tags="python,machine learning,gradient boosting,xgboost,regression,optimization,scikit-learn,model evaluation" data-text="gradient boosting from scratch implemented gradient boosting (xgboost-style) from scratch with gradient- and hessian-based optimization, matching the library&#x27;s performance under the same hyperparameters. python machine learning gradient boosting xgboost regression optimization scikit-learn model evaluation">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #6f5a2a, #0a1525 70%)"></div><span class="tag-ico">&#127922;</span></div>
+        <div class="body">
+          <h3 class="serif">Gradient Boosting from Scratch</h3>
+          <p>Implemented gradient boosting (XGBoost-style) from scratch with gradient- and Hessian-based optimization, matching the library&#x27;s performance under the same hyperparameters.</p>
+          <div class="tags"><span>Python</span><span>Machine Learning</span><span>Gradient Boosting</span><span>XGBoost</span><span>Regression</span><span>Optimization</span><span>scikit-learn</span><span>Model Evaluation</span></div>
+          <div class="links"></div>
+        </div>
+      </article>
+
+      <article class="card proj" data-tags="python,data analysis,statistical modeling,data collection,data visualization,census data,economics,business analytics,pandas" data-text="real-estate demographic case study case study joining 2023 census demographics with lodes employment data to analyze where people live versus work, using statistical modeling and data collection from public apis. python data analysis statistical modeling data collection data visualization census data economics business analytics pandas">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #4a6f5a, #0a1525 70%)"></div><span class="tag-ico">&#127970;</span></div>
+        <div class="body">
+          <h3 class="serif">Real-Estate Demographic Case Study</h3>
+          <p>Case study joining 2023 Census demographics with LODES employment data to analyze where people live versus work, using statistical modeling and data collection from public APIs.</p>
+          <div class="tags"><span>Python</span><span>Data Analysis</span><span>Statistical Modeling</span><span>Data Collection</span><span>Data Visualization</span><span>Census Data</span><span>Economics</span><span>Business Analytics</span><span>pandas</span></div>
+          <div class="links"></div>
+        </div>
+      </article>
+
+      <article class="card proj" data-tags="market research,competitor analysis,business analytics,data analysis,stakeholder communication" data-text="market intelligence &amp; competitor analysis samsung biologics internship: market and competitor analysis to support strategy, with automated workflows that cut recurring manual effort by over 90% and insights communicated to stakeholders. market research competitor analysis business analytics data analysis stakeholder communication">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #5a3a8f, #0a1525 70%)"></div><span class="tag-ico">&#128200;</span></div>
+        <div class="body">
+          <h3 class="serif">Market Intelligence &amp; Competitor Analysis</h3>
+          <p>Samsung Biologics internship: market and competitor analysis to support strategy, with automated workflows that cut recurring manual effort by over 90% and insights communicated to stakeholders.</p>
+          <div class="tags"><span>Market Research</span><span>Competitor Analysis</span><span>Business Analytics</span><span>Data Analysis</span><span>Stakeholder Communication</span></div>
+          <div class="links"></div>
+        </div>
+      </article>
+
+      <article class="card proj" data-tags="tableau,sql,data visualization,dashboards,business analytics,data analysis,customer success,stakeholder communication" data-text="customer analytics dashboards suntek systems: built tableau dashboards from customer data that cut reporting time by over 50% and delivered data-driven insights to align the product with customer needs. tableau sql data visualization dashboards business analytics data analysis customer success stakeholder communication">
+        <div class="thumb"><div class="glow" style="background:radial-gradient(120% 120% at 70% 20%, #8f6a2a, #0a1525 70%)"></div><span class="tag-ico">&#128203;</span></div>
+        <div class="body">
+          <h3 class="serif">Customer Analytics Dashboards</h3>
+          <p>Suntek Systems: built Tableau dashboards from customer data that cut reporting time by over 50% and delivered data-driven insights to align the product with customer needs.</p>
+          <div class="tags"><span>Tableau</span><span>SQL</span><span>Data Visualization</span><span>Dashboards</span><span>Business Analytics</span><span>Data Analysis</span><span>Customer Success</span><span>Stakeholder Communication</span></div>
+          <div class="links"></div>
         </div>
       </article>
 
