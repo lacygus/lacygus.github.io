@@ -128,6 +128,7 @@ section { padding: 96px 0; }
 .card .thumb .glow { position: absolute; inset: 0; opacity: .85; }
 .card .thumb .tag-ico { position: relative; z-index: 1; color: #fff; opacity: .92;
   font-size: 2.2rem; }
+.card .thumb .thumb-img { width: 100%; height: 100%; object-fit: cover; }
 .card .body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
 .card h3 { font-family: var(--serif); font-weight: 600; font-size: 1.22rem; margin: 0 0 8px; }
 .card p { color: var(--muted-d); font-size: .92rem; margin: 0 0 16px; flex: 1; }
